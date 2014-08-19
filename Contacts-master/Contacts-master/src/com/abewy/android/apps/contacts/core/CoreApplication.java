@@ -3,6 +3,8 @@ package com.abewy.android.apps.contacts.core;
 import android.annotation.TargetApi;
 import android.app.Application;
 import android.util.Log;
+
+import com.abewy.android.apps.contacts.R;
 import com.crashlytics.android.Crashlytics;
 
 public abstract class CoreApplication extends Application

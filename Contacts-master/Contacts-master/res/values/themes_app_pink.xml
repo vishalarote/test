@@ -5,7 +5,7 @@
 
   <style name="App_Pink" parent="@style/_App_Pink"/>
 
-  <style name="_App_Pink" parent="Theme.AppCompat.Light">
+  <style name="_App_Pink" parent="android:Theme.Light">
 
     <item name="android:editTextStyle">@style/EditTextApp_Pink</item>
 

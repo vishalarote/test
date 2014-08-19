@@ -20,12 +20,27 @@ public class PreferencesActivity extends PreferenceActivity implements OnSharedP
 	private boolean mListAnimation;
 	private TransitionEffect mTransitionEffect;
 	private int mPeopleViewType;
+	private int mAppThemeType;
 
 	@SuppressWarnings("deprecation")
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
-		super.onCreate(savedInstanceState);
+		int theme = CorePrefs.getAppTheme();
+		switch (theme) {
+		case 1:
+			setTheme(R.style.Theme_App_orange);
+			break;
+
+		case 0:
+			setTheme(R.style.Theme_App_pink);
+			break;
+		 
+		 
+		}
+		
+
+ 		super.onCreate(savedInstanceState);
 		
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		addPreferencesFromResource(R.xml.preferences);
@@ -36,7 +51,10 @@ public class PreferencesActivity extends PreferenceActivity implements OnSharedP
 		mTransitionEffect = CorePrefs.getViewPagerEffect();
 		mPeopleViewType=CorePrefs.getPeopleViewType();
 		 
-	 
+		
+		mAppThemeType=CorePrefs.getAppTheme();
+		 
+		 
 
 		 
 	}
@@ -48,11 +66,19 @@ public class PreferencesActivity extends PreferenceActivity implements OnSharedP
 		boolean changed = mSortByLastName != CorePrefs.isSortingByLastName()
 							|| mRoundedAvatars != CorePrefs.isRoundedPictures()
 							|| mListAnimation != CorePrefs.isAnimatingListGridItems()
-							|| mTransitionEffect != CorePrefs.getViewPagerEffect()||mPeopleViewType!= CorePrefs.getPeopleViewType();
-		
+							|| mTransitionEffect != CorePrefs.getViewPagerEffect()||mPeopleViewType!= CorePrefs.getPeopleViewType()||mAppThemeType!= CorePrefs.getAppTheme();
+		restart();
 		CorePrefs.setPrefsHaveChanged(changed);
 	}
-	
+	private void restart()
+	{
+		Intent localIntent = new Intent(this, PreferencesActivity.class);
+		localIntent.setFlags(Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED | Intent.FLAG_ACTIVITY_NO_ANIMATION | Intent.FLAG_ACTIVITY_CLEAR_TOP
+				| Intent.FLAG_ACTIVITY_CLEAR_TASK);
+		startActivityForResult (localIntent,125);
+		overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+		finish();
+	}
 	@SuppressWarnings("deprecation")
 	@Override
 	protected void onResume()

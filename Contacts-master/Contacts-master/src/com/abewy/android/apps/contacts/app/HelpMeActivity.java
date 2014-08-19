@@ -11,7 +11,7 @@ import android.util.Log;
 import android.view.Window;
 import com.abewy.android.apps.contacts.R;
 
-public class HelpMeActivity extends FragmentActivity
+public class HelpMeActivity extends BaseFragmentActivity
 {
 	private HelpMeFragment mFragment;
 	@Override

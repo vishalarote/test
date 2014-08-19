@@ -20,7 +20,7 @@ import com.abewy.android.apps.contacts.core.CoreIntentCodes;
 import com.jfeinstein.jazzyviewpager.JazzyViewPager;
 import com.jfeinstein.jazzyviewpager.JazzyViewPager.TransitionEffect;
 
-public class ContactActivity extends FragmentActivity implements OnContactDeletedListener
+public class ContactActivity extends BaseFragmentActivity implements OnContactDeletedListener
 {
 	private SectionsPagerAdapter	mSectionsPagerAdapter;
 	private JazzyViewPager			mViewPager;

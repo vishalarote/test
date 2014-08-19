@@ -7,6 +7,7 @@ import android.app.ActionBar.OnNavigationListener;
 import android.app.ActionBar.Tab;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.content.res.Resources.Theme;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
@@ -45,7 +46,7 @@ import com.jfeinstein.jazzyviewpager.JazzyViewPager;
 import com.jfeinstein.jazzyviewpager.JazzyViewPager.TransitionEffect;
 import com.ptr.folding.FoldingDrawerLayout;
 
-public class MainActivity extends FragmentActivity implements ActionBar.TabListener, IActionbarSpinner
+public class MainActivity extends BaseFragmentActivity implements ActionBar.TabListener, IActionbarSpinner
 {
 	private static final int		SETTINGS_CODE		= 125;
 
@@ -105,7 +106,9 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
-		super.onCreate(null);
+		
+		
+		super.onCreate(savedInstanceState);
 		//Crashlytics.start(this);
 		setContentView(R.layout.activity_main);
 		actionBar = getActionBar();

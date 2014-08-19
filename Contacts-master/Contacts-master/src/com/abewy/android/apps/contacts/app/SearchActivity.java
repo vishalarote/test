@@ -10,7 +10,7 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 
-public class SearchActivity extends FragmentActivity
+public class SearchActivity extends BaseFragmentActivity
 {
 	@Override
 	public void onCreate(Bundle savedInstanceState)

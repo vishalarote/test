@@ -5,7 +5,7 @@
 
   <style name="App_Orange" parent="@style/_App_Orange"/>
 
-  <style name="_App_Orange" parent="Theme.AppCompat.Light">
+  <style name="_App_Orange" parent="android:Theme.Light">
 
     <item name="android:editTextStyle">@style/EditTextApp_Orange</item>
 

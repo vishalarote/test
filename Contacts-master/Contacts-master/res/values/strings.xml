@@ -19,6 +19,14 @@
     <string name="action_view_as_small_grid">Small grid</string>
     <string name="action_help_me">Help me !</string>
     
+     <string name="theme_light">Light</string>
+      <string name="theme_orange">Orange</string>
+     <string name="theme_pink">Pink</string>
+    
+    
+    
+    
+    
     <string name="menu_call">Call</string>
     <string name="menu_send_sms">Send SMS</string>
     <string name="menu_send_email">Send email</string>
@@ -38,6 +46,8 @@
     <string name="preferences_ui_title">UI</string>
     <string name="preference_ui_picture_style_title">Rounded avatars</string>
     <string name="preference_ui_picture_style_summary">If enabled, the avatars will be rounded</string>
+     <string name="preference_ui_theme_title">Theme</string>
+    <string name="preference_ui_theme_summary">Choose Application theme</string>
     <string name="preference_ui_effects_title">Transition effect</string>
     <string name="preference_ui_effects_summary">Choose the effect of the slide</string>
     <string name="preference_ui_sort_by_last_name_title">Sort by last name</string>
@@ -96,11 +106,11 @@
     <!-- Contact details -->
     <string name="delete_dialog_message">This contact will be deleted</string>
  <string-array name="animal_array">
-        <item>Rate us</item>
+        <item>Rate us Google Play</item>
         <item>Share on Facebook</item>
         <item>Buy add free</item>
-        <item>UI Setting</item>
-        <item>Themes</item>
+        <item>Setting</item>
+         
     </string-array>
 
     <string name="drawer_open">Open navigation drawer</string>
