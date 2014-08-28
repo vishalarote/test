@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Generated with http://android-holo-colors.com -->
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <style name="App_Orange" parent="@style/_App_Orange"/>
+
+  <style name="_App_Orange" parent="Theme.AppCompat.Light">
+
+    <item name="android:editTextStyle">@style/EditTextApp_Orange</item>
+
+    <item name="android:textColorHighlight">#99ff8800</item>
+
+    <item name="android:autoCompleteTextViewStyle">@style/AutoCompleteTextViewApp_Orange</item>
+
+    <item name="android:checkboxStyle">@style/CheckBoxApp_Orange</item>
+
+    <item name="android:radioButtonStyle">@style/RadioButtonApp_Orange</item>
+
+    <item name="android:buttonStyle">@style/ButtonApp_Orange</item>
+
+    <item name="android:imageButtonStyle">@style/ImageButtonApp_Orange</item>
+
+    <item name="android:spinnerStyle">@style/SpinnerApp_Orange</item>
+
+    <item name="android:spinnerDropDownItemStyle">@style/SpinnerDropDownItemApp_Orange</item>
+
+    <item name="android:progressBarStyleHorizontal">@style/ProgressBarApp_Orange</item>
+
+    <item name="android:seekBarStyle">@style/SeekBarApp_Orange</item>
+
+    <item name="android:ratingBarStyle">@style/RatingBarApp_Orange</item>
+
+    <item name="android:ratingBarStyleIndicator">@style/RatingBarBigApp_Orange</item>
+
+    <item name="android:ratingBarStyleSmall">@style/RatingBarSmallApp_Orange</item>
+
+    <item name="android:buttonStyleToggle">@style/ToggleApp_Orange</item>
+
+    <item name="android:listViewStyle">@style/ListViewApp_Orange</item>
+
+    <item name="android:listViewWhiteStyle">@style/ListViewApp_Orange.White</item>
+
+    <item name="android:spinnerItemStyle">@style/SpinnerItemApp_Orange</item>
+
+  </style>
+
+</resources>

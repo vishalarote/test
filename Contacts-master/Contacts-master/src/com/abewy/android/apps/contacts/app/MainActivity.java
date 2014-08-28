@@ -197,7 +197,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 		mViewPager.setPageMargin(30);
 		mViewPager.setCurrentItem(mCurrentFragmentIndex);
 		mViewPager.setOnPageChangeListener(mSectionsPagerAdapter);
-		mViewPager.setPagingEnabled(!CorePrefs.isFirstLaunch());
+	//	mViewPager.setPagingEnabled(!CorePrefs.isFirstLaunch());
 
 		// mSectionsPagerAdapter.setData(contacts, favContacts);
 	}
@@ -244,8 +244,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu)
 	{
-		if (!CorePrefs.isFirstLaunch())
-		{
+		 
 			getMenuInflater().inflate(R.menu.main, menu);
 
 			MenuItem item = menu.findItem(R.id.action_search);
@@ -257,7 +256,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 			{
 				menu.add(Menu.NONE, R.id.action_help_me, 99, R.string.action_help_me);
 			}
-		}
+		 
 
 		return true;
 	}
@@ -437,7 +436,9 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 		@Override
 		public void onPageSelected(int position)
 		{
-			if (peopleFragment == null)
+			actionBar.setSelectedNavigationItem(position);
+			
+			/*if (peopleFragment == null)
 				return;
 
 			if (position == 0)
@@ -449,7 +450,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 			{
 				favoritesFragment.onSetToFront();
 				peopleFragment.onSetToBack();
-			}
+			}*/
 		}
 
 		@Override

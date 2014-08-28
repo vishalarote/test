@@ -106,42 +106,41 @@ public class FragmentContainer extends Fragment implements LoaderCallbacks<Curso
 	{
 		super.onCreateOptionsMenu(menu, inflater);
 
-		if (!CorePrefs.isFirstLaunch())
-		{
-			inflater.inflate(R.menu.fragment_container, menu);
 
-			MenuItem item = menu.findItem(R.id.action_view_as);
-			switch (getSelectedView())
-			{
-			case CorePrefs.VIEW_TYPE_LIST:
-			{
-				item.setIcon(R.drawable.ic_ab_view_as_list);
-				break;
-			}
-			case CorePrefs.VIEW_TYPE_BIG_GRID:
-			{
-				item.setIcon(R.drawable.ic_ab_view_as_big_grid);
-				break;
-			}
-			case CorePrefs.VIEW_TYPE_MEDIUM_GRID:
-			{
-				item.setIcon(R.drawable.ic_ab_view_as_medium_grid);
-				break;
-			}
-			case CorePrefs.VIEW_TYPE_SMALL_GRID:
-			{
-				item.setIcon(R.drawable.ic_ab_view_as_small_grid);
-				break;
-			}
-			}
+	/*	inflater.inflate(R.menu.fragment_container, menu);
+
+		MenuItem item = menu.findItem(R.id.action_view_as);
+		switch (getSelectedView())
+		{
+		case CorePrefs.VIEW_TYPE_LIST:
+		{
+			item.setIcon(R.drawable.ic_ab_view_as_list);
+			break;
 		}
+		case CorePrefs.VIEW_TYPE_BIG_GRID:
+		{
+			item.setIcon(R.drawable.ic_ab_view_as_big_grid);
+			break;
+		}
+		case CorePrefs.VIEW_TYPE_MEDIUM_GRID:
+		{
+			item.setIcon(R.drawable.ic_ab_view_as_medium_grid);
+			break;
+		}
+		case CorePrefs.VIEW_TYPE_SMALL_GRID:
+		{
+			item.setIcon(R.drawable.ic_ab_view_as_small_grid);
+			break;
+		}
+		}
+*/
 
 	}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item)
 	{
-		if (item.getItemId() == R.id.action_view_as_list)
+		/*if (item.getItemId() == R.id.action_view_as_list)
 		{
 			if (getSelectedView() != CorePrefs.VIEW_TYPE_LIST)
 			{
@@ -177,7 +176,7 @@ public class FragmentContainer extends Fragment implements LoaderCallbacks<Curso
 				switchFragment();
 			}
 		}
-
+*/
 		return super.onOptionsItemSelected(item);
 	}
 

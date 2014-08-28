@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- File created by the Android Action Bar Style Generator
+
+     Copyright (C) 2011 The Android Open Source Project
+     Copyright (C) 2012 readyState Software Ltd
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources>
+
+    <style name="Theme.App_pink" parent="@android:style/Theme.Holo.Light">
+        <item name="android:actionBarItemBackground">@drawable/selectable_background_app_pink</item>
+        <item name="android:popupMenuStyle">@style/PopupMenu.App_pink</item>
+        <item name="android:dropDownListViewStyle">@style/DropDownListView.App_pink</item>
+        <item name="android:actionBarTabStyle">@style/ActionBarTabStyle.App_pink</item>
+        <item name="android:actionDropDownStyle">@style/DropDownNav.App_pink</item>
+        <item name="android:actionBarStyle">@style/ActionBar.Solid.App_pink</item>
+        <item name="android:actionModeBackground">@drawable/cab_background_top_app_pink</item>
+        <item name="android:actionModeSplitBackground">@drawable/cab_background_bottom_app_pink</item>
+        <item name="android:actionModeCloseButtonStyle">@style/ActionButton.CloseMode.App_pink</item>
+        
+        
+    </style>
+
+    <style name="ActionBar.Solid.App_pink" parent="@android:style/Widget.Holo.Light.ActionBar.Solid">
+        <item name="android:background">@drawable/ab_background_textured_app_pink</item>
+        <item name="android:backgroundStacked">@drawable/ab_stacked_solid_app_pink</item>
+        <item name="android:backgroundSplit">@drawable/ab_background_textured_app_pink</item>
+        <item name="android:progressBarStyle">@style/ProgressBar.App_pink</item>
+    </style>
+
+    <style name="ActionBar.Transparent.App_pink" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">@drawable/ab_transparent_app_pink</item>
+        <item name="android:progressBarStyle">@style/ProgressBar.App_pink</item>
+    </style>
+
+    <style name="PopupMenu.App_pink" parent="@android:style/Widget.Holo.Light.ListPopupWindow">
+        <item name="android:popupBackground">@drawable/menu_dropdown_panel_app_pink</item>	
+    </style>
+
+    <style name="DropDownListView.App_pink" parent="@android:style/Widget.Holo.Light.ListView.DropDown">
+        <item name="android:listSelector">@drawable/selectable_background_app_pink</item>
+    </style>
+
+    <style name="ActionBarTabStyle.App_pink" parent="@android:style/Widget.Holo.Light.ActionBar.TabView">
+        <item name="android:background">@drawable/tab_indicator_ab_app_pink</item>
+    </style>
+
+    <style name="DropDownNav.App_pink" parent="@android:style/Widget.Holo.Light.Spinner">
+        <item name="android:background">@drawable/spinner_background_ab_app_pink</item>
+        <item name="android:popupBackground">@drawable/menu_dropdown_panel_app_pink</item>
+        <item name="android:dropDownSelector">@drawable/selectable_background_app_pink</item>
+    </style>
+    
+    <style name="ProgressBar.App_pink" parent="@android:style/Widget.Holo.Light.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/progress_horizontal_app_pink</item>
+    </style>
+    
+    <style name="ActionButton.CloseMode.App_pink" parent="@android:style/Widget.Holo.Light.ActionButton.CloseMode">
+        <item name="android:background">@drawable/btn_cab_done_app_pink</item>
+    </style>
+
+    <!-- this style is only referenced in a Light.DarkActionBar based theme -->
+    <style name="Theme.App_pink.Widget" parent="@android:style/Theme.Holo">
+        <item name="android:popupMenuStyle">@style/PopupMenu.App_pink</item>
+        <item name="android:dropDownListViewStyle">@style/DropDownListView.App_pink</item>
+    </style>
+ <style name="EditTextApp_Pink" parent="android:Widget.EditText">
+	  <item name="android:background">@drawable/app_pink_edit_text_holo_light</item>
+	  <item name="android:textColor">#000000</item>
+  </style>
+
+  <style name="AutoCompleteTextViewApp_Pink" parent="android:Widget.AutoCompleteTextView">
+      <item name="android:dropDownSelector">@drawable/app_pink_list_selector_holo_light</item>
+	  <item name="android:background">@drawable/app_pink_edit_text_holo_light</item>
+	  <item name="android:textColor">#000000</item>
+  </style>
+
+  <style name="CheckBoxApp_Pink" parent="android:Widget.CompoundButton.CheckBox">
+      <item name="android:button">@drawable/app_pink_btn_check_holo_light</item>
+  </style>
+
+  <style name="RadioButtonApp_Pink" parent="android:Widget.CompoundButton.RadioButton">
+      <item name="android:button">@drawable/app_pink_btn_radio_holo_light</item>
+  </style>
+
+  <style name="ButtonApp_Pink" parent="android:Widget.Button">
+	  <item name="android:background">@drawable/app_pink_btn_default_holo_light</item>
+	  <item name="android:minHeight">48dip</item>
+	  <item name="android:minWidth">64dip</item>
+	  <item name="android:textColor">#000000</item>
+  </style>
+
+  <style name="ImageButtonApp_Pink" parent="android:Widget.ImageButton">
+	  <item name="android:background">@drawable/app_pink_btn_default_holo_light</item>
+  </style>
+
+  <style name="SpinnerApp_Pink" parent="android:Widget.Spinner">
+      <item name="android:background">@drawable/app_pink_spinner_background_holo_light</item>
+      <item name="android:dropDownSelector">@drawable/app_pink_list_selector_holo_light</item>
+  </style>
+
+  <style name="SpinnerDropDownItemApp_Pink" parent="android:Widget.DropDownItem.Spinner">
+      <item name="android:checkMark">@drawable/app_pink_btn_radio_holo_light</item>
+  </style>
+  <style name="TabApp_Pink">
+      <item name="android:gravity">center_horizontal</item>
+      <item name="android:paddingLeft">16dip</item>
+      <item name="android:paddingRight">16dip</item>
+      <item name="android:background">@drawable/app_pink_tab_indicator_holo</item>
+      <item name="android:layout_width">0dip</item>
+      <item name="android:layout_weight">1</item>
+      <item name="android:minWidth">80dip</item>
+  </style>
+
+  <style name="TabTextApp_Pink">
+	  <item name="android:textColor">#000000</item>
+      <item name="android:textSize">12sp</item>
+      <item name="android:textStyle">bold</item>
+      <!-- v14 <item name="android:textAllCaps">true</item> -->
+      <item name="android:ellipsize">marquee</item>
+      <item name="android:maxLines">2</item>
+      <item name="android:maxWidth">180dip</item>
+  </style>
+
+  <style name="ProgressBarApp_Pink" parent="android:Widget.ProgressBar.Horizontal">
+      <item name="android:progressDrawable">@drawable/app_pink_progress_horizontal_holo_light</item>
+      <item name="android:indeterminateDrawable">@drawable/app_pink_progress_indeterminate_horizontal_holo_light</item>
+      <item name="android:minHeight">16dip</item>
+      <item name="android:maxHeight">16dip</item>
+  </style>
+
+  <style name="SeekBarApp_Pink" parent="android:Widget.SeekBar">
+      <item name="android:progressDrawable">@drawable/app_pink_scrubber_progress_horizontal_holo_light</item>
+      <item name="android:indeterminateDrawable">@drawable/app_pink_scrubber_progress_horizontal_holo_light</item>
+      <item name="android:minHeight">13dip</item>
+      <item name="android:maxHeight">13dip</item>
+      <item name="android:thumb">@drawable/app_pink_scrubber_control_selector_holo_light</item>
+      <item name="android:thumbOffset">16dip</item>
+      <item name="android:paddingLeft">16dip</item>
+      <item name="android:paddingRight">16dip</item>
+  </style>
+
+  <style name="RatingBarApp_Pink" parent="android:Widget.RatingBar">
+      <item name="android:progressDrawable">@drawable/app_pink_ratingbar_full_holo_light</item>
+      <item name="android:indeterminateDrawable">@drawable/app_pink_ratingbar_full_holo_light</item>
+  </style>
+
+  <style name="RatingBarBigApp_Pink" parent="android:Widget.RatingBar">
+      <item name="android:progressDrawable">@drawable/app_pink_ratingbar_holo_light</item>
+      <item name="android:indeterminateDrawable">@drawable/app_pink_ratingbar_holo_light</item>
+      <item name="android:minHeight">35dip</item>
+      <item name="android:maxHeight">35dip</item>
+  </style>
+
+  <style name="RatingBarSmallApp_Pink" parent="android:Widget.RatingBar">
+      <item name="android:progressDrawable">@drawable/app_pink_ratingbar_small_holo_light</item>
+      <item name="android:indeterminateDrawable">@drawable/app_pink_ratingbar_small_holo_light</item>
+      <item name="android:minHeight">16dip</item>
+      <item name="android:maxHeight">16dip</item>
+  </style>
+
+  <style name="ToggleApp_Pink" parent="android:Widget.Button.Toggle">
+      <item name="android:background">@drawable/app_pink_btn_toggle_holo_light</item>
+      <item name="android:minHeight">48dip</item>
+	  <item name="android:textColor">#000000</item>
+  </style>
+
+  <style name="ListViewApp_Pink" parent="android:Widget.ListView">
+      <item name="android:listSelector">@drawable/app_pink_list_selector_holo_light</item>
+  </style>
+
+  <style name="ListViewApp_Pink.White" parent="android:Widget.ListView.White">
+      <item name="android:listSelector">@drawable/app_pink_list_selector_holo_light</item>
+  </style>
+
+  <style name="SpinnerItemApp_Pink" parent="android:TextAppearance.Widget.TextView.SpinnerItem">
+      <item name="android:textColor">#000000</item>
+  </style>
+    
+</resources>

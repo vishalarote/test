@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Generated with http://android-holo-colors.com -->
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <style name="App_Pink" parent="@style/_App_Pink"/>
+
+  <style name="_App_Pink" parent="Theme.AppCompat.Light">
+
+    <item name="android:editTextStyle">@style/EditTextApp_Pink</item>
+
+    <item name="android:textColorHighlight">#99aa66cc</item>
+
+    <item name="android:autoCompleteTextViewStyle">@style/AutoCompleteTextViewApp_Pink</item>
+
+    <item name="android:checkboxStyle">@style/CheckBoxApp_Pink</item>
+
+    <item name="android:radioButtonStyle">@style/RadioButtonApp_Pink</item>
+
+    <item name="android:buttonStyle">@style/ButtonApp_Pink</item>
+
+    <item name="android:imageButtonStyle">@style/ImageButtonApp_Pink</item>
+
+    <item name="android:spinnerStyle">@style/SpinnerApp_Pink</item>
+
+    <item name="android:spinnerDropDownItemStyle">@style/SpinnerDropDownItemApp_Pink</item>
+
+    <item name="android:progressBarStyleHorizontal">@style/ProgressBarApp_Pink</item>
+
+    <item name="android:seekBarStyle">@style/SeekBarApp_Pink</item>
+
+    <item name="android:ratingBarStyle">@style/RatingBarApp_Pink</item>
+
+    <item name="android:ratingBarStyleIndicator">@style/RatingBarBigApp_Pink</item>
+
+    <item name="android:ratingBarStyleSmall">@style/RatingBarSmallApp_Pink</item>
+
+    <item name="android:buttonStyleToggle">@style/ToggleApp_Pink</item>
+
+    <item name="android:listViewStyle">@style/ListViewApp_Pink</item>
+
+    <item name="android:listViewWhiteStyle">@style/ListViewApp_Pink.White</item>
+
+    <item name="android:spinnerItemStyle">@style/SpinnerItemApp_Pink</item>
+
+  </style>
+
+</resources>

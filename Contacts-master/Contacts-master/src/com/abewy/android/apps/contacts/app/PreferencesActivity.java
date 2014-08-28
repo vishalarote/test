@@ -19,6 +19,7 @@ public class PreferencesActivity extends PreferenceActivity implements OnSharedP
 	private boolean mRoundedAvatars;
 	private boolean mListAnimation;
 	private TransitionEffect mTransitionEffect;
+	private int mPeopleViewType;
 
 	@SuppressWarnings("deprecation")
 	@Override
@@ -33,7 +34,7 @@ public class PreferencesActivity extends PreferenceActivity implements OnSharedP
 		mRoundedAvatars = CorePrefs.isRoundedPictures();
 		mListAnimation = CorePrefs.isAnimatingListGridItems();
 		mTransitionEffect = CorePrefs.getViewPagerEffect();
-		
+		mPeopleViewType=CorePrefs.getPeopleViewType();
 		 
 	 
 
@@ -47,7 +48,7 @@ public class PreferencesActivity extends PreferenceActivity implements OnSharedP
 		boolean changed = mSortByLastName != CorePrefs.isSortingByLastName()
 							|| mRoundedAvatars != CorePrefs.isRoundedPictures()
 							|| mListAnimation != CorePrefs.isAnimatingListGridItems()
-							|| mTransitionEffect != CorePrefs.getViewPagerEffect();
+							|| mTransitionEffect != CorePrefs.getViewPagerEffect()||mPeopleViewType!= CorePrefs.getPeopleViewType();
 		
 		CorePrefs.setPrefsHaveChanged(changed);
 	}

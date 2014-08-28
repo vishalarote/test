@@ -53,7 +53,7 @@ public class CorePrefs
 
 	public static int getPeopleViewType()
 	{
-		return getPreferences().getInt(PEOPLE_VIEW_TYPE, 0);
+		return Integer.parseInt(getPreferences().getString(PEOPLE_VIEW_TYPE, "0"));
 	}
 
 	public static void setFavoritesViewType(int viewType)
@@ -125,10 +125,10 @@ public class CorePrefs
 		return getPreferences().getBoolean(HAS_DONATED, false);
 	}
 	
-	public static boolean isFirstLaunch()
+/*	public static boolean isFirstLaunch()
 	{
 		return getPreferences().getBoolean(FIRST_LAUNCH, true);
-	}
+	}*/
 	
 	public static void setFirstLaunchDone()
 	{

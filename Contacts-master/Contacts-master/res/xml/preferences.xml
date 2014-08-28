@@ -21,13 +21,13 @@
     xmlns:klyph="http://schemas.android.com/apk/res-auto" >
 
     <PreferenceCategory android:title="@string/preferences_ui_title" >
-        <ListPreference
+          <ListPreference
             android:defaultValue="4"
             android:entries="@array/viewtype_effects"
             android:entryValues="@array/viewtypeeffcts_values"
             android:key="people_view_type"
             android:summary="@string/preference_ui_viewtype_style_summary"
-            android:title="@string/preference_ui_viewtype_style_title" />
+            android:title="@string/preference_ui_viewtype_style_title" />  
   <ListPreference
             android:defaultValue="4"
             android:entries="@array/jazzy_effects"
