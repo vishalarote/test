@@ -1,13 +1,15 @@
 package com.abewy.android.apps.contacts.app;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import android.app.ActionBar;
 import android.app.ActionBar.OnNavigationListener;
 import android.app.ActionBar.Tab;
+import android.app.FragmentTransaction;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.content.res.Resources.Theme;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
@@ -46,10 +48,10 @@ import com.jfeinstein.jazzyviewpager.JazzyViewPager;
 import com.jfeinstein.jazzyviewpager.JazzyViewPager.TransitionEffect;
 import com.ptr.folding.FoldingDrawerLayout;
 
-public class MainActivity extends BaseFragmentActivity implements ActionBar.TabListener, IActionbarSpinner
+public class MainActivity extends BaseFragmentActivity implements   IActionbarSpinner
 {
 	private static final int		SETTINGS_CODE		= 125;
-
+	private DialerActivity dialerFragment;
 	private SectionsPagerAdapter	mSectionsPagerAdapter;
 	private JazzyViewPager			mViewPager;
 	private SearchView				mSearchView;
@@ -102,18 +104,19 @@ public class MainActivity extends BaseFragmentActivity implements ActionBar.TabL
 	private ItemSelectedListener mItemSelectedListener;
 
 	private ActionBarDrawerToggle mDrawerToggle;
-
+	public Context mContext;
+	public   void onBtnClick(View view) {
+		dialerFragment.onBtnClick(view);
+	}
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
-		
-		
 		super.onCreate(savedInstanceState);
 		//Crashlytics.start(this);
 		setContentView(R.layout.activity_main);
 		actionBar = getActionBar();
 
-
+		mContext=this;
 		// Specify that tabs should be displayed in the action bar.
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
@@ -185,9 +188,13 @@ public class MainActivity extends BaseFragmentActivity implements ActionBar.TabL
 		{
 			launchIab();
 		}
-		for (int i = 0; i < 2; i++) {
-			actionBar.addTab(actionBar.newTab().setText("Tab " + (i + 1)).setTabListener(this));
-		}
+		 
+		
+		mSectionsPagerAdapter.addTab(actionBar.newTab().  setIcon(R.drawable.ic_action_users),	FragmentContainer.class, null);
+		mSectionsPagerAdapter.addTab(actionBar.newTab(). setIcon(R.drawable.ic_action_star),	FavoritesFragmentContainer.class, null);
+		mSectionsPagerAdapter.addTab(actionBar.newTab().  setIcon(R.drawable.ic_phone_default),	DialerActivity.class, null);
+
+
 	}
 
 	private void setupViewPager()
@@ -200,7 +207,7 @@ public class MainActivity extends BaseFragmentActivity implements ActionBar.TabL
 		mViewPager.setPageMargin(30);
 		mViewPager.setCurrentItem(mCurrentFragmentIndex);
 		mViewPager.setOnPageChangeListener(mSectionsPagerAdapter);
-	//	mViewPager.setPagingEnabled(!CorePrefs.isFirstLaunch());
+		//	mViewPager.setPagingEnabled(!CorePrefs.isFirstLaunch());
 
 		// mSectionsPagerAdapter.setData(contacts, favContacts);
 	}
@@ -247,19 +254,19 @@ public class MainActivity extends BaseFragmentActivity implements ActionBar.TabL
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu)
 	{
-		 
-			getMenuInflater().inflate(R.menu.main, menu);
 
-			MenuItem item = menu.findItem(R.id.action_search);
-			mSearchView = (SearchView) item.getActionView();
+		getMenuInflater().inflate(R.menu.main, menu);
 
-			item.setOnActionExpandListener(mExpandListener);
+		MenuItem item = menu.findItem(R.id.action_search);
+		mSearchView = (SearchView) item.getActionView();
 
-			if (!CorePrefs.hasDonated())
-			{
-				menu.add(Menu.NONE, R.id.action_help_me, 99, R.string.action_help_me);
-			}
-		 
+		item.setOnActionExpandListener(mExpandListener);
+
+		if (!CorePrefs.hasDonated())
+		{
+			menu.add(Menu.NONE, R.id.action_help_me, 99, R.string.action_help_me);
+		}
+
 
 		return true;
 	}
@@ -303,24 +310,7 @@ public class MainActivity extends BaseFragmentActivity implements ActionBar.TabL
 		return super.onOptionsItemSelected(item);
 	}
 
-	@Override
-	public void onTabReselected(Tab tab, android.app.FragmentTransaction ft)
-	{
-
-	}
-
-	@Override
-	public void onTabSelected(Tab tab, android.app.FragmentTransaction ft)
-	{
-		mViewPager.setCurrentItem(tab.getPosition());
-
-	}
-
-	@Override
-	public void onTabUnselected(Tab tab, android.app.FragmentTransaction ft)
-	{
-
-	}
+	 
 
 	@Override
 	protected void onDestroy()
@@ -345,16 +335,25 @@ public class MainActivity extends BaseFragmentActivity implements ActionBar.TabL
 		mViewPager = null;
 		mSearchView = null;
 	}
+	static final class TabInfo {
+         private final Class<?> clss;
+         private final Bundle args;
 
+         TabInfo(Class<?> _class, Bundle _args) {
+             clss = _class;
+             args = _args;
+         }
+     }
 	/**
 	 * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
 	 * one of the sections/tabs/pages.
 	 */
-	public class SectionsPagerAdapter extends FragmentPagerAdapter implements ViewPager.OnPageChangeListener
+	public class SectionsPagerAdapter extends FragmentPagerAdapter implements ViewPager.OnPageChangeListener,ActionBar.TabListener
 	{
 		private FragmentContainer	peopleFragment;
 		private FragmentContainer	favoritesFragment;
-
+		  private final ArrayList<TabInfo> mTabs = new ArrayList<TabInfo>();
+		 
 		public SectionsPagerAdapter(FragmentManager fm)
 		{
 			super(fm);
@@ -363,19 +362,35 @@ public class MainActivity extends BaseFragmentActivity implements ActionBar.TabL
 		@Override
 		public Fragment getItem(int position)
 		{
-			if (position == 0)
+			 if (position == 0)
 			{
 				peopleFragment = new FragmentContainer();
 
 				return peopleFragment;
 			}
-			else
+			else if(position == 1)
+
 			{
 				favoritesFragment = new FavoritesFragmentContainer();
 
 				return favoritesFragment;
-			}
+			}else 
+			{
+				dialerFragment= new DialerActivity();
+				return dialerFragment;
+			} 
+			 
 		}
+		 public void addTab(ActionBar.Tab tab, Class<?> clss, Bundle args) {
+	            
+			 TabInfo info = new TabInfo(clss, args);
+	            tab.setTag(info);
+	            tab.setTabListener(this);
+	            mTabs.add(info);
+	          
+	           actionBar.addTab(tab);
+	            notifyDataSetChanged();
+	        }
 
 		@Override
 		public int getItemPosition(Object object)
@@ -386,7 +401,7 @@ public class MainActivity extends BaseFragmentActivity implements ActionBar.TabL
 		@Override
 		public int getCount()
 		{
-			return 2;
+			return  mTabs.size();
 		}
 
 		@Override
@@ -425,11 +440,12 @@ public class MainActivity extends BaseFragmentActivity implements ActionBar.TabL
 				favoritesFragment.searchQuery(query);
 		}
 
-		public void destroyItem(ViewGroup container, int position, Object obj)
+		/*public void destroyItem(ViewGroup container, int position, Object obj)
 		{
 			container.removeView(mViewPager.findViewFromObject(position));
+			((JazzyViewPager)container).removeObject(position);
 		}
-
+*/
 		public void onDestroy()
 		{
 			peopleFragment = null;
@@ -440,7 +456,7 @@ public class MainActivity extends BaseFragmentActivity implements ActionBar.TabL
 		public void onPageSelected(int position)
 		{
 			actionBar.setSelectedNavigationItem(position);
-			
+
 			/*if (peopleFragment == null)
 				return;
 
@@ -466,6 +482,28 @@ public class MainActivity extends BaseFragmentActivity implements ActionBar.TabL
 		public void onPageScrolled(int arg0, float arg1, int arg2)
 		{
 
+		}
+
+		@Override
+		public void onTabReselected(Tab arg0, FragmentTransaction arg1) {
+			 
+			
+		}
+
+		@Override
+		public void onTabSelected(Tab tab, FragmentTransaction ft) {
+ 			Object tag = tab.getTag();
+            for (int i=0; i<mTabs.size(); i++) {
+                if (mTabs.get(i) == tag) {
+                    mViewPager.setCurrentItem(i);
+                }
+            }
+		}
+
+		@Override
+		public void onTabUnselected(Tab tab, FragmentTransaction ft) {
+			// TODO Auto-generated method stub
+			
 		}
 	}
 
@@ -609,12 +647,12 @@ public class MainActivity extends BaseFragmentActivity implements ActionBar.TabL
 		case 0 : Intent intent = new Intent(Intent.ACTION_VIEW);
 		intent.setData(Uri.parse("market://details?id=com.miniclip.cartownstreets"));
 		startActivity(intent); 
-			break;
+		break;
 		case 3:	startActivityForResult(new Intent(this, PreferencesActivity.class), SETTINGS_CODE);			break;
 
 		}
 
-		
+
 		mDrawerLayout.closeDrawer(mDrawerList);
 	}
 

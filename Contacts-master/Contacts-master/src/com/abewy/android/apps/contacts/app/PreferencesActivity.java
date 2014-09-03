@@ -14,7 +14,7 @@ public class PreferencesActivity extends PreferenceActivity implements OnSharedP
 {
 	private static final String			ABOUT_KEY				= "contacts_about";
 	private static final String			CHANGELOG_KEY			= "contacts_changelog";
-	
+
 	private boolean mSortByLastName;
 	private boolean mRoundedAvatars;
 	private boolean mListAnimation;
@@ -26,6 +26,7 @@ public class PreferencesActivity extends PreferenceActivity implements OnSharedP
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
+		super.onCreate(savedInstanceState);
 		int theme = CorePrefs.getAppTheme();
 		switch (theme) {
 		case 1:
@@ -35,41 +36,35 @@ public class PreferencesActivity extends PreferenceActivity implements OnSharedP
 		case 0:
 			setTheme(R.style.Theme_App_pink);
 			break;
-		 
-		 
-		}
-		
 
- 		super.onCreate(savedInstanceState);
-		
+
+		}
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		addPreferencesFromResource(R.xml.preferences);
-		
+
 		mSortByLastName = CorePrefs.isSortingByLastName();
 		mRoundedAvatars = CorePrefs.isRoundedPictures();
 		mListAnimation = CorePrefs.isAnimatingListGridItems();
 		mTransitionEffect = CorePrefs.getViewPagerEffect();
 		mPeopleViewType=CorePrefs.getPeopleViewType();
-		 
-		
-		mAppThemeType=CorePrefs.getAppTheme();
-		 
-		 
 
-		 
+		mAppThemeType=CorePrefs.getAppTheme();
+
+
 	}
-	
+
 
 	@Override
 	public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key)
 	{
 		boolean changed = mSortByLastName != CorePrefs.isSortingByLastName()
-							|| mRoundedAvatars != CorePrefs.isRoundedPictures()
-							|| mListAnimation != CorePrefs.isAnimatingListGridItems()
-							|| mTransitionEffect != CorePrefs.getViewPagerEffect()||mPeopleViewType!= CorePrefs.getPeopleViewType()||mAppThemeType!= CorePrefs.getAppTheme();
+				|| mRoundedAvatars != CorePrefs.isRoundedPictures()
+				|| mListAnimation != CorePrefs.isAnimatingListGridItems()
+				|| mTransitionEffect != CorePrefs.getViewPagerEffect()||mPeopleViewType!= CorePrefs.getPeopleViewType()||mAppThemeType!= CorePrefs.getAppTheme();
 		restart();
 		CorePrefs.setPrefsHaveChanged(changed);
 	}
+
 	private void restart()
 	{
 		Intent localIntent = new Intent(this, PreferencesActivity.class);

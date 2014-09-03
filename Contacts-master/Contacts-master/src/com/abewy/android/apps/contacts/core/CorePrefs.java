@@ -1,6 +1,5 @@
 package com.abewy.android.apps.contacts.core;
 
-import android.R.string;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.preference.PreferenceManager;
@@ -18,6 +17,7 @@ public class CorePrefs
 	public static final String	HAS_DONATED				= "contacts_has_donated";
 	public static final String	FIRST_LAUNCH			= "contacts_first_launch";
 	public static final String	APP_THEME=	"app_theme_type";
+
 	public static final int		VIEW_TYPE_LIST			= 0;
 	public static final int		VIEW_TYPE_BIG_GRID		= 1;
 	public static final int		VIEW_TYPE_MEDIUM_GRID	= 2;
@@ -44,9 +44,6 @@ public class CorePrefs
 	{
 		return getPreferences().getBoolean(LIST_GRID_ANMIATION, false);
 	}
-	public static int getAppTheme(){
-		return Integer.parseInt(getPreferences().getString(APP_THEME, "0"));
-	}
 
 	public static void setPeopleViewType(int viewType)
 	{
@@ -54,7 +51,9 @@ public class CorePrefs
 		editor.putInt(PEOPLE_VIEW_TYPE, viewType);
 		editor.commit();
 	}
-
+	public static int getAppTheme(){
+		return Integer.parseInt(getPreferences().getString(APP_THEME, "0"));
+	}
 	public static int getPeopleViewType()
 	{
 		return Integer.parseInt(getPreferences().getString(PEOPLE_VIEW_TYPE, "0"));
@@ -78,32 +77,32 @@ public class CorePrefs
 
 		switch (effect)
 		{
-		case 0:
-			return TransitionEffect.Standard;
-		case 1:
-			return TransitionEffect.Tablet;
-		case 2:
-			return TransitionEffect.CubeIn;
-		case 3:
-			return TransitionEffect.CubeOut;
-		case 4:
-			return TransitionEffect.FlipHorizontal;
-		case 5:
-			return TransitionEffect.FlipVertical;
-		case 6:
-			return TransitionEffect.Stack;
-		case 7:
-			return TransitionEffect.ZoomIn;
-		case 8:
-			return TransitionEffect.ZoomOut;
-		case 9:
-			return TransitionEffect.RotateUp;
-		case 10:
-			return TransitionEffect.RotateDown;
-		case 11:
-			return TransitionEffect.Accordion;
-		default:
-			return TransitionEffect.FlipHorizontal;
+			case 0:
+				return TransitionEffect.Standard;
+			case 1:
+				return TransitionEffect.Tablet;
+			case 2:
+				return TransitionEffect.CubeIn;
+			case 3:
+				return TransitionEffect.CubeOut;
+			case 4:
+				return TransitionEffect.FlipHorizontal;
+			case 5:
+				return TransitionEffect.FlipVertical;
+			case 6:
+				return TransitionEffect.Stack;
+			case 7:
+				return TransitionEffect.ZoomIn;
+			case 8:
+				return TransitionEffect.ZoomOut;
+			case 9:
+				return TransitionEffect.RotateUp;
+			case 10:
+				return TransitionEffect.RotateDown;
+			case 11:
+				return TransitionEffect.Accordion;
+			default:
+				return TransitionEffect.FlipHorizontal;
 		}
 	}
 
@@ -128,12 +127,12 @@ public class CorePrefs
 	{
 		return getPreferences().getBoolean(HAS_DONATED, false);
 	}
-
-	/*	public static boolean isFirstLaunch()
+	
+/*	public static boolean isFirstLaunch()
 	{
 		return getPreferences().getBoolean(FIRST_LAUNCH, true);
 	}*/
-
+	
 	public static void setFirstLaunchDone()
 	{
 		Editor editor = getPreferences().edit();

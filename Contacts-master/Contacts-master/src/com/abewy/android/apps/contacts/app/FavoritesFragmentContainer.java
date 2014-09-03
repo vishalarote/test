@@ -57,13 +57,13 @@ public class FavoritesFragmentContainer extends FragmentContainer
 	@Override
 	protected int getSelectedView()
 	{
-		return CorePrefs.getFavoritesViewType();
+		return CorePrefs.getPeopleViewType();
 	}
 
 	@Override
 	protected void setSelectedView(int viewType)
 	{
-		CorePrefs.setFavoritesViewType(viewType);
+		CorePrefs.setPeopleViewType(viewType);
 	}
 
 	@Override
@@ -110,15 +110,14 @@ public class FavoritesFragmentContainer extends FragmentContainer
 	@Override
 	protected void onLoadFinished(List<BaseType> contacts)
 	{
-		if (mFirstLoad)
-		{
+		 
 			mFavCount = contacts.size();
 
 			if (mFavGroup != null)
 			{
 				mFavGroup.setSize(mFavCount);
 			}
-		}
+		 
 
 		mFirstLoad = false;
 

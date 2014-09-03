@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 public class BaseListFragment extends android.support.v4.app.ListFragment
 {
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		int theme = CorePrefs.getAppTheme();
@@ -24,6 +25,7 @@ public class BaseListFragment extends android.support.v4.app.ListFragment
 		}
 		super.onCreate(savedInstanceState);
 	}
+
 	protected void setListVisible(boolean visible)
 	{
 		setListShown(visible);

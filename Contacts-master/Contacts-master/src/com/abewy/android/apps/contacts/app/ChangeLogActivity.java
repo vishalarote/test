@@ -7,7 +7,7 @@ import android.webkit.WebView;
 import com.abewy.android.apps.contacts.R;
 import com.inscription.ChangeLogDialog;
 
-public class ChangeLogActivity extends Activity
+public class ChangeLogActivity extends BaseFragmentActivity
 {
 	@Override
 	public void onCreate(Bundle savedInstanceState)

@@ -30,35 +30,29 @@
         <item>10</item>
         <item>11</item>
     </string-array>
-    
+
     <!-- View Type  preferences -->
     <string-array name="viewtype_effects">
         <item>@string/action_view_as_list</item>
         <item>@string/action_view_as_big_grid</item>
         <item>@string/action_view_as_medium_grid</item>
         <item>@string/action_view_as_small_grid</item>
-         
     </string-array>
     <string-array name="viewtypeeffcts_values">
         <item>0</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
-         
     </string-array>
-       <!-- View Type  preferences -->
+    
     <string-array name="app_themes_names">
-             <item>@string/theme_pink</item>
-        
+        <item>@string/theme_pink</item>
         <item>@string/theme_orange</item>
-         
     </string-array>
+    
     <string-array name="app_themes_values">
         <item>0</item>
         <item>1</item>
-        <item>2</item>
-     
-         
     </string-array>
     <string-array name="donate_labels">
         <item>Donate 1 Euro</item>

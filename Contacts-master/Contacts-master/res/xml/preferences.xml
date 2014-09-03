@@ -21,8 +21,7 @@
     xmlns:klyph="http://schemas.android.com/apk/res-auto" >
 
     <PreferenceCategory android:title="@string/preferences_ui_title" >
-        
-              <ListPreference
+             <ListPreference
             android:defaultValue="0"
             android:entries="@array/app_themes_names"
             android:entryValues="@array/app_themes_values"

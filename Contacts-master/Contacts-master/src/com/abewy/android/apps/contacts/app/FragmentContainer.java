@@ -314,7 +314,10 @@ public class FragmentContainer extends Fragment implements LoaderCallbacks<Curso
 	@Override
 	public void onLoadFinished(Loader<Cursor> loader, Cursor cursor)
 	{
-		new LoaderTask().execute(cursor);
+		if(cursor.isClosed())
+			onDataChange();
+		else 
+				new LoaderTask().execute(cursor);
 	}
 
 	@Override
@@ -386,7 +389,7 @@ public class FragmentContainer extends Fragment implements LoaderCallbacks<Curso
 
 			Cursor cursor = params[0];
 
-			if (cursor.getCount() != 0)
+			if (cursor.getCount() != 0  )
 			{
 				int idColumnIndex, lookupColumnIndex, nameColumnIndex, photoUriColumnIndex, photoThumbUriColumnIndex, starredColumnIndex;
 
