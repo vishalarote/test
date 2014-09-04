@@ -22,6 +22,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MenuItem.OnActionExpandListener;
@@ -30,9 +31,11 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.SearchView.OnQueryTextListener;
+import android.widget.TextView;
 
 import com.abewy.android.apps.contacts.R;
 import com.abewy.android.apps.contacts.adapter.LayoutType;
@@ -43,6 +46,7 @@ import com.abewy.android.apps.contacts.iab.IabHelper;
 import com.abewy.android.apps.contacts.iab.IabResult;
 import com.abewy.android.apps.contacts.iab.Inventory;
 import com.abewy.android.apps.contacts.iab.Purchase;
+import com.abewy.android.apps.contacts.util.EasyRatingDialog;
 import com.abewy.android.extended.items.BaseType;
 import com.jfeinstein.jazzyviewpager.JazzyViewPager;
 import com.jfeinstein.jazzyviewpager.JazzyViewPager.TransitionEffect;
@@ -105,6 +109,7 @@ public class MainActivity extends BaseFragmentActivity implements   IActionbarSp
 
 	private ActionBarDrawerToggle mDrawerToggle;
 	public Context mContext;
+	private EasyRatingDialog easyRatingDialog;
 	public   void onBtnClick(View view) {
 		dialerFragment.onBtnClick(view);
 	}
@@ -114,6 +119,8 @@ public class MainActivity extends BaseFragmentActivity implements   IActionbarSp
 		super.onCreate(savedInstanceState);
 		//Crashlytics.start(this);
 		setContentView(R.layout.activity_main);
+		easyRatingDialog = new EasyRatingDialog(this);
+
 		actionBar = getActionBar();
 
 		mContext=this;
@@ -126,8 +133,7 @@ public class MainActivity extends BaseFragmentActivity implements   IActionbarSp
 		mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow,
 				GravityCompat.START);
 		// set up the drawer's list view with items and click listener
-		mDrawerList.setAdapter(new ArrayAdapter<String>(this,
-				R.layout.drawer_list_item, mAnimalTitles));
+		mDrawerList.setAdapter(new MySimpleArrayAdapter(this,mAnimalTitles));
 		mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
 
 		mItemSelectedListener = new ItemSelectedListener();
@@ -188,8 +194,8 @@ public class MainActivity extends BaseFragmentActivity implements   IActionbarSp
 		{
 			launchIab();
 		}
-		 
-		
+
+
 		mSectionsPagerAdapter.addTab(actionBar.newTab().  setIcon(R.drawable.ic_action_users),	FragmentContainer.class, null);
 		mSectionsPagerAdapter.addTab(actionBar.newTab(). setIcon(R.drawable.ic_action_star),	FavoritesFragmentContainer.class, null);
 		mSectionsPagerAdapter.addTab(actionBar.newTab().  setIcon(R.drawable.ic_phone_default),	DialerActivity.class, null);
@@ -240,7 +246,17 @@ public class MainActivity extends BaseFragmentActivity implements   IActionbarSp
 			Log.d(TAG, "onActivityResult handled by IABUtil.");
 		}
 	}
+	@Override
+	protected void onStart() {
+		super.onStart();
+		easyRatingDialog.onStart();
+	}
 
+	@Override
+	protected void onResume() {
+		super.onResume();
+		easyRatingDialog.showIfNeeded(this);
+	}
 	private void restart()
 	{
 		Intent localIntent = new Intent(this, MainActivity.class);
@@ -310,7 +326,7 @@ public class MainActivity extends BaseFragmentActivity implements   IActionbarSp
 		return super.onOptionsItemSelected(item);
 	}
 
-	 
+
 
 	@Override
 	protected void onDestroy()
@@ -336,14 +352,14 @@ public class MainActivity extends BaseFragmentActivity implements   IActionbarSp
 		mSearchView = null;
 	}
 	static final class TabInfo {
-         private final Class<?> clss;
-         private final Bundle args;
+		private final Class<?> clss;
+		private final Bundle args;
 
-         TabInfo(Class<?> _class, Bundle _args) {
-             clss = _class;
-             args = _args;
-         }
-     }
+		TabInfo(Class<?> _class, Bundle _args) {
+			clss = _class;
+			args = _args;
+		}
+	}
 	/**
 	 * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
 	 * one of the sections/tabs/pages.
@@ -352,8 +368,8 @@ public class MainActivity extends BaseFragmentActivity implements   IActionbarSp
 	{
 		private FragmentContainer	peopleFragment;
 		private FragmentContainer	favoritesFragment;
-		  private final ArrayList<TabInfo> mTabs = new ArrayList<TabInfo>();
-		 
+		private final ArrayList<TabInfo> mTabs = new ArrayList<TabInfo>();
+
 		public SectionsPagerAdapter(FragmentManager fm)
 		{
 			super(fm);
@@ -362,7 +378,7 @@ public class MainActivity extends BaseFragmentActivity implements   IActionbarSp
 		@Override
 		public Fragment getItem(int position)
 		{
-			 if (position == 0)
+			if (position == 0)
 			{
 				peopleFragment = new FragmentContainer();
 
@@ -379,18 +395,18 @@ public class MainActivity extends BaseFragmentActivity implements   IActionbarSp
 				dialerFragment= new DialerActivity();
 				return dialerFragment;
 			} 
-			 
+
 		}
-		 public void addTab(ActionBar.Tab tab, Class<?> clss, Bundle args) {
-	            
-			 TabInfo info = new TabInfo(clss, args);
-	            tab.setTag(info);
-	            tab.setTabListener(this);
-	            mTabs.add(info);
-	          
-	           actionBar.addTab(tab);
-	            notifyDataSetChanged();
-	        }
+		public void addTab(ActionBar.Tab tab, Class<?> clss, Bundle args) {
+
+			TabInfo info = new TabInfo(clss, args);
+			tab.setTag(info);
+			tab.setTabListener(this);
+			mTabs.add(info);
+
+			actionBar.addTab(tab);
+			notifyDataSetChanged();
+		}
 
 		@Override
 		public int getItemPosition(Object object)
@@ -445,7 +461,7 @@ public class MainActivity extends BaseFragmentActivity implements   IActionbarSp
 			container.removeView(mViewPager.findViewFromObject(position));
 			((JazzyViewPager)container).removeObject(position);
 		}
-*/
+		 */
 		public void onDestroy()
 		{
 			peopleFragment = null;
@@ -486,24 +502,25 @@ public class MainActivity extends BaseFragmentActivity implements   IActionbarSp
 
 		@Override
 		public void onTabReselected(Tab arg0, FragmentTransaction arg1) {
-			 
-			
+
+
 		}
 
 		@Override
 		public void onTabSelected(Tab tab, FragmentTransaction ft) {
- 			Object tag = tab.getTag();
-            for (int i=0; i<mTabs.size(); i++) {
-                if (mTabs.get(i) == tag) {
-                    mViewPager.setCurrentItem(i);
-                }
-            }
+			Object tag = tab.getTag();
+			for (int i=0; i<mTabs.size(); i++) {
+				if (mTabs.get(i) == tag) {
+					mViewPager.setCurrentItem(i);
+				}
+			}
+			mDrawerLayout.closeDrawer(mDrawerList);
 		}
 
 		@Override
 		public void onTabUnselected(Tab tab, FragmentTransaction ft) {
 			// TODO Auto-generated method stub
-			
+
 		}
 	}
 
@@ -644,9 +661,11 @@ public class MainActivity extends BaseFragmentActivity implements   IActionbarSp
 		// update the main content by replacing fragments
 
 		switch(position){
-		case 0 : Intent intent = new Intent(Intent.ACTION_VIEW);
-		intent.setData(Uri.parse("market://details?id=com.miniclip.cartownstreets"));
-		startActivity(intent); 
+		
+		case 0 :
+			String appPackage = mContext.getPackageName();
+		Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + appPackage));
+		mContext.startActivity(intent);
 		break;
 		case 3:	startActivityForResult(new Intent(this, PreferencesActivity.class), SETTINGS_CODE);			break;
 
@@ -695,4 +714,32 @@ public class MainActivity extends BaseFragmentActivity implements   IActionbarSp
 		// Pass any configuration change to the drawer toggls
 		mDrawerToggle.onConfigurationChanged(newConfig);
 	}
+
+	public class MySimpleArrayAdapter extends ArrayAdapter<String> {
+		private final Context context;
+		private final String[] values;
+
+		public MySimpleArrayAdapter(Context context, String[] values) {
+			super(context, R.layout.drawer_list_item, values);
+			this.context = context;
+			this.values = values;
+		}
+
+		@Override
+		public View getView(int position, View convertView, ViewGroup parent) {
+			LayoutInflater inflater = (LayoutInflater) context
+					.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+			View rowView = inflater.inflate(R.layout.drawer_list_item, parent, false);
+			TextView textView = (TextView) rowView.findViewById(R.id.menutxt);
+			ImageView imageView = (ImageView) rowView.findViewById(R.id.imageViewicon);
+			textView.setText(values[position]);
+			// Change the icon for Windows and iPhone
+			String s = values[position];
+
+			//    imageView.setImageResource(R.drawable.no);
+
+
+			return rowView;
+		}
+	} 
 }
