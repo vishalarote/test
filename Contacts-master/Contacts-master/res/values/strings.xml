@@ -30,7 +30,8 @@
   <string name="theme_light">Light</string>
       <string name="theme_orange">Orange</string>
      <string name="theme_pink">Pink</string>
-    
+         <string name="theme_blue">Blue</string>
+     
     <!-- Preferences -->
     <string name="preferences_ui_title">UI</string>
     <string name="preference_ui_picture_style_title">Rounded avatars</string>
@@ -96,11 +97,11 @@
     <string name="delete_dialog_message">This contact will be deleted</string>
 
     <string-array name="animal_array">
-        <item>Rate us</item>
+        <item>Rate us on Play Store</item>
         <item>Share on Facebook</item>
         <item>Buy add free</item>
-        <item>UI Setting</item>
-        <item>Themes</item>
+        <item>Setting</item>
+         
     </string-array>
 
     <string name="drawer_open">Open navigation drawer</string>

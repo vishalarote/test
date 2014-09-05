@@ -736,7 +736,20 @@ public class MainActivity extends BaseFragmentActivity implements   IActionbarSp
 			// Change the icon for Windows and iPhone
 			String s = values[position];
 
-			//    imageView.setImageResource(R.drawable.no);
+		    switch(position){
+		    case 0:
+		    imageView.setImageResource(R.drawable.ic_action_favorite);
+		    break;
+		    case 1:
+			    imageView.setImageResource(R.drawable.ic_action_share);
+			    break;
+		    case 2:
+			    imageView.setImageResource(R.drawable.ic_ab_launcher);
+			    break;
+		    case 3:
+			    imageView.setImageResource(R.drawable.ic_action_settings);
+			    break;
+		    } 
 
 
 			return rowView;

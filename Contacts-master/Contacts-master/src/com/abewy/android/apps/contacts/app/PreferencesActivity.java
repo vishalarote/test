@@ -26,19 +26,22 @@ public class PreferencesActivity extends PreferenceActivity implements OnSharedP
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
-		super.onCreate(savedInstanceState);
 		int theme = CorePrefs.getAppTheme();
 		switch (theme) {
+		case 0:
+			setTheme(R.style.Theme_App_pink);
+			break;
 		case 1:
 			setTheme(R.style.Theme_App_orange);
 			break;
-
-		case 0:
-			setTheme(R.style.Theme_App_pink);
+		case 2:
+			setTheme(R.style.Theme_Blue);
 			break;
 
 
 		}
+		super.onCreate(savedInstanceState);
+
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		addPreferencesFromResource(R.xml.preferences);
 
