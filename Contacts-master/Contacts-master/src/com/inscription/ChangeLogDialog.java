@@ -35,7 +35,7 @@ import android.content.res.XmlResourceParser;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.webkit.WebView;
-import com.abewy.android.apps.contacts.R;
+import com.jazzyapps.android.apps.contacts.R;
 
 /**
  * Class to show a change log dialog

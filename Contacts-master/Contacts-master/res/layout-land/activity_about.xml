@@ -20,7 +20,7 @@
             android:layout_centerHorizontal="true"
             android:src="@drawable/ic_launcher_large" />
 
-        <com.abewy.android.extended.widget.TypefaceTextView
+        <com.jazzyapps.android.extended.widget.TypefaceTextView
             android:id="@+id/app_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

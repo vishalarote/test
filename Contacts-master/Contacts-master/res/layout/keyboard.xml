@@ -6,17 +6,17 @@
     <LinearLayout style="@style/keyboard_row" >
 
         <Button
-            android:id="@+id/btn1"
+            android:id="@+id/btn1" android:layout_weight="1"
             style="@style/keyboard_button"
-            android:text="1"  />
+            android:text="1" />
 
         <Button
-            android:id="@+id/btn2"
+            android:id="@+id/btn2" android:layout_weight="1"
             style="@style/keyboard_button"
-            android:text="2\nABC"  />
+            android:text="2\nABC" />
 
         <Button
-            android:id="@+id/btn3"
+            android:id="@+id/btn3" android:layout_weight="1"
             style="@style/keyboard_button"
             android:text="3\nDEF" />
     </LinearLayout>
@@ -25,17 +25,17 @@
 
         <Button
             android:id="@+id/btn4"
-            style="@style/keyboard_button"
+            style="@style/keyboard_button" android:layout_weight="1"
             android:text="4\nGHI" />
 
         <Button
-            android:id="@+id/btn5"
+            android:id="@+id/btn5" android:layout_weight="1"
             style="@style/keyboard_button"
             android:text="5\nJKL" />
 
         <Button
             android:id="@+id/btn6"
-            style="@style/keyboard_button"
+            style="@style/keyboard_button" android:layout_weight="1"
             android:text="6\nMNO" />
     </LinearLayout>
 
@@ -43,16 +43,16 @@
 
         <Button
             android:id="@+id/btn7"
-            style="@style/keyboard_button"
+            style="@style/keyboard_button" android:layout_weight="1"
             android:text="7\nPQRS" />
 
         <Button
-            android:id="@+id/btn8"
+            android:id="@+id/btn8" android:layout_weight="1"
             style="@style/keyboard_button"
             android:text="8\nTUV" />
 
         <Button
-            android:id="@+id/btn9"
+            android:id="@+id/btn9" android:layout_weight="1"
             style="@style/keyboard_button"
             android:text="9\nWXYZ" />
     </LinearLayout>
@@ -60,19 +60,33 @@
     <LinearLayout style="@style/keyboard_row" >
 
         <Button
-            android:id="@+id/btn_star"
+            android:id="@+id/btn_star" android:layout_weight="1"
             style="@style/keyboard_button"
             android:text="*" />
 
         <Button
-            android:id="@+id/btn0"
+            android:id="@+id/btn0" android:layout_weight="1"
             style="@style/keyboard_button"
             android:text="0" />
 
         <Button
-            android:id="@+id/btn_pound"
+            android:id="@+id/btn_pound" android:layout_weight="1"
             style="@style/keyboard_button"
             android:text="#" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/keyboard_row"        android:background="#ffffff"
+        android:layout_height="wrap_content" android:layout_width="wrap_content"
+        android:layout_gravity="center" >
+
+        <Button
+            android:id="@+id/btn_dialcall"
+            style="@style/keyboard_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_action_dailcall"
+            android:text="" />
     </LinearLayout>
 
 </LinearLayout>

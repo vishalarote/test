@@ -9,13 +9,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
-        <com.abewy.android.apps.contacts.widget.ProfileImageView
+        <com.jazzyapps.android.apps.contacts.widget.ProfileImageView
             android:id="@+id/picture"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop" />
 
-        <com.abewy.android.extended.widget.TypefaceTextView
+        <com.jazzyapps.android.extended.widget.TypefaceTextView
             android:id="@+id/letter_text"
             style="?android:attr/textAppearanceLargeInverse"
             android:layout_width="wrap_content"
@@ -26,7 +26,7 @@
             ext:fontFamily="Roboto-Light" />
     </FrameLayout>
 
-    <com.abewy.android.extended.widget.TypefaceTextView
+    <com.jazzyapps.android.extended.widget.TypefaceTextView
         android:id="@+id/primary_text"
         style="?android:textAppearanceMedium"
         android:layout_width="match_parent"

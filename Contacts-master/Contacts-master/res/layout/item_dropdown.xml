@@ -9,7 +9,7 @@
     android:paddingLeft="@dimen/default_spacing_minor"
     android:paddingRight="@dimen/default_spacing_minor" >
 	
-    <com.abewy.android.extended.widget.TypefaceTextView
+    <com.jazzyapps.android.extended.widget.TypefaceTextView
         android:id="@+id/title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -19,7 +19,7 @@
         android:textColor="@android:color/white"
         ext:fontFamily="Roboto-Light"/>
     
-    <com.abewy.android.extended.widget.TypefaceTextView
+    <com.jazzyapps.android.extended.widget.TypefaceTextView
         android:id="@+id/size"
         android:textAppearance="?android:textAppearanceLarge"
         android:layout_width="wrap_content"

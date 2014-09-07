@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
+                android:layout_width="match_parent"  
                 android:layout_height="match_parent">
 
     <LinearLayout
@@ -9,7 +9,7 @@
             android:layout_height="46dip"
             android:layout_marginTop="2dip"
             android:layout_marginBottom="2dip"
-            android:gravity="center"
+            android:gravity="center"  
             android:background="#ffffff" >
 
         <TextView
@@ -40,7 +40,7 @@
 
     <LinearLayout
             android:id="@+id/keyboard"
-            style="@style/keyboard"
+            style="@style/keyboard"  
             android:layout_alignParentBottom="true">
 		<include layout="@layout/keyboard"/>
         <!-- <FrameLayout
@@ -54,7 +54,9 @@
     <ListView
             android:id="@+id/list"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_above="@id/keyboard"
+            android:layout_height="match_parent" android:paddingBottom="8dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+             android:layout_above="@id/keyboard"
             android:layout_below="@id/input_bar"/>
 </RelativeLayout>

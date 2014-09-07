@@ -9,12 +9,7 @@
         <item>@string/cube_out</item>
         <item>@string/flip_horizontal</item>
         <item>@string/flip_vertical</item>
-        <item>@string/stack</item>
-        <item>@string/zoom_in</item>
-        <item>@string/zoom_out</item>
-        <item>@string/rotate_up</item>
-        <item>@string/rotate_down</item>
-        <item>@string/accordion</item>
+        
     </string-array>
     <string-array name="jazzy_effects_values">
         <item>0</item>
@@ -23,12 +18,7 @@
         <item>3</item>
         <item>4</item>
         <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-        <item>9</item>
-        <item>10</item>
-        <item>11</item>
+        
     </string-array>
 
     <!-- View Type  preferences -->
@@ -71,18 +61,18 @@
         <item>Donate 50 Euros</item>
     </string-array>
     <string-array name="donate_values">
-        <item>com.abewy.android.apps.contacts.donate_1</item>
-        <item>com.abewy.android.apps.contacts.donate_2</item>
-        <item>com.abewy.android.apps.contacts.donate_3</item>
-        <item>com.abewy.android.apps.contacts.donate_4</item>
-        <item>com.abewy.android.apps.contacts.donate_5</item>
-        <item>com.abewy.android.apps.contacts.donate_8</item>
-        <item>com.abewy.android.apps.contacts.donate_10</item>
-        <item>com.abewy.android.apps.contacts.donate_15</item>
-        <item>com.abewy.android.apps.contacts.donate_20</item>
-        <item>com.abewy.android.apps.contacts.donate_25</item>
-        <item>com.abewy.android.apps.contacts.donate_30</item>
-        <item>com.abewy.android.apps.contacts.donate_50</item>
+        <item>com.jazzyapps.android.apps.contacts.donate_1</item>
+        <item>com.jazzyapps.android.apps.contacts.donate_2</item>
+        <item>com.jazzyapps.android.apps.contacts.donate_3</item>
+        <item>com.jazzyapps.android.apps.contacts.donate_4</item>
+        <item>com.jazzyapps.android.apps.contacts.donate_5</item>
+        <item>com.jazzyapps.android.apps.contacts.donate_8</item>
+        <item>com.jazzyapps.android.apps.contacts.donate_10</item>
+        <item>com.jazzyapps.android.apps.contacts.donate_15</item>
+        <item>com.jazzyapps.android.apps.contacts.donate_20</item>
+        <item>com.jazzyapps.android.apps.contacts.donate_25</item>
+        <item>com.jazzyapps.android.apps.contacts.donate_30</item>
+        <item>com.jazzyapps.android.apps.contacts.donate_50</item>
     </string-array>
 
 </resources>

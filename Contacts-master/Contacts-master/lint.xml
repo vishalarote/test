@@ -1,3 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <lint>
+    <issue id="AlwaysShowAction" severity="ignore" />
+    <issue id="Assert" severity="ignore" />
+    <issue id="ContentDescription" severity="ignore" />
+    <issue id="DefaultLocale" severity="ignore" />
+    <issue id="DuplicateDefinition" severity="ignore" />
+    <issue id="HardcodedText" severity="ignore" />
+    <issue id="IconDipSize" severity="ignore" />
+    <issue id="IconDuplicates" severity="ignore" />
+    <issue id="IconDuplicatesConfig" severity="ignore" />
+    <issue id="IconLocation" severity="ignore" />
+    <issue id="InconsistentLayout" severity="ignore" />
+    <issue id="InflateParams" severity="ignore" />
+    <issue id="InlinedApi" severity="ignore" />
+    <issue id="MergeRootFrame" severity="ignore" />
+    <issue id="MissingTranslation" severity="ignore" />
+    <issue id="NestedWeights" severity="ignore" />
+    <issue id="NewApi" severity="ignore" />
+    <issue id="OldTargetApi" severity="ignore" />
+    <issue id="Overdraw" severity="ignore" />
+    <issue id="Recycle" severity="ignore" />
+    <issue id="Registered" severity="ignore" />
+    <issue id="SpUsage" severity="ignore" />
+    <issue id="SuspiciousImport" severity="ignore" />
+    <issue id="TypographyDashes" severity="ignore" />
+    <issue id="UnusedAttribute" severity="ignore" />
+    <issue id="UnusedResources" severity="ignore" />
+    <issue id="UseCompoundDrawables" severity="ignore" />
+    <issue id="UseSparseArrays" severity="ignore" />
+    <issue id="UseValueOf" severity="ignore" />
+    <issue id="ViewHolder" severity="ignore" />
 </lint>

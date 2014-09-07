@@ -18,7 +18,7 @@
             android:orientation="vertical"
             android:padding="@dimen/default_spacing_minor" >
             
-            <com.abewy.android.extended.widget.TypefaceTextView
+            <com.jazzyapps.android.extended.widget.TypefaceTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="@dimen/default_spacing_minor"
@@ -27,7 +27,7 @@
                 android:textSize="22sp"
                 ext:fontFamily="Roboto-Light" />
 
-            <com.abewy.android.extended.widget.TypefaceTextView
+            <com.jazzyapps.android.extended.widget.TypefaceTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="@dimen/default_spacing_minor"
@@ -46,7 +46,7 @@
             android:orientation="vertical"
             android:padding="@dimen/default_spacing_minor" >
 
-            <com.abewy.android.extended.widget.TypefaceTextView
+            <com.jazzyapps.android.extended.widget.TypefaceTextView
                 android:id="@+id/app_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -82,7 +82,7 @@
                     android:src="@drawable/ic_checkmark" />
             </LinearLayout>
 
-            <com.abewy.android.extended.widget.TypefaceTextView
+            <com.jazzyapps.android.extended.widget.TypefaceTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/donate_hint"
@@ -103,7 +103,7 @@
             android:paddingLeft="@dimen/default_spacing_minor"
             android:paddingRight="@dimen/default_spacing_minor" >
 
-            <com.abewy.android.extended.widget.TypefaceTextView
+            <com.jazzyapps.android.extended.widget.TypefaceTextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -146,13 +146,13 @@
                 android:clickable="true"
                 android:orientation="vertical" >
 
-                <com.abewy.android.extended.widget.SquareImageView
+                <com.jazzyapps.android.extended.widget.SquareImageView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:scaleType="centerCrop"
                     android:src="@drawable/ic_app_klyph" />
 
-                <com.abewy.android.extended.widget.TypefaceTextView
+                <com.jazzyapps.android.extended.widget.TypefaceTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:lines="2"
@@ -172,13 +172,13 @@
                 android:clickable="true"
                 android:orientation="vertical" >
 
-                <com.abewy.android.extended.widget.SquareImageView
+                <com.jazzyapps.android.extended.widget.SquareImageView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:scaleType="centerCrop"
                     android:src="@drawable/ic_app_klyph_messenger" />
 
-                <com.abewy.android.extended.widget.TypefaceTextView
+                <com.jazzyapps.android.extended.widget.TypefaceTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:lines="2"
@@ -198,13 +198,13 @@
                 android:clickable="true"
                 android:orientation="vertical" >
 
-                <com.abewy.android.extended.widget.SquareImageView
+                <com.jazzyapps.android.extended.widget.SquareImageView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:scaleType="centerCrop"
                     android:src="@drawable/ic_next_app" />
 
-                <com.abewy.android.extended.widget.TypefaceTextView
+                <com.jazzyapps.android.extended.widget.TypefaceTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:lines="2"
